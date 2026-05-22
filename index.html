@@ -168,6 +168,22 @@
             border-top: 1px solid #3B434D;
             margin: 2rem 0 1rem;
         }
+        /* Tokenomics table */
+        .tokenomics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .tokenomics-table th, .tokenomics-table td {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #3B434D;
+            text-align: left;
+            color: #BCC2C9;
+        }
+        .tokenomics-table th {
+            background: #0B0E11;
+            color: #F0B90B;
+        }
         @media (max-width: 600px) {
             .container { padding: 2rem 1rem; }
             h1 { font-size: 2rem; }
@@ -228,6 +244,26 @@
                     <small>Smart contract & bot</small>
                 </a>
             </div>
+        </div>
+
+        <!-- Tokenomics -->
+        <div class="section" id="tokenomics">
+            <h2>📊 Tokenomics & Distribution</h2>
+            <p>
+                Tether USD has a fixed total supply of <strong>1,000,000,000 USDT</strong>. 
+                All tokens were minted at deployment (May 21, 2026) and are fully circulating. 
+                There is no minting capability, and no tokens are locked or vested.
+            </p>
+            <table class="tokenomics-table">
+                <tr><th>Allocation</th><th>Percentage</th><th>TGE Unlock</th><th>Cliff</th><th>Vesting</th></tr>
+                <tr><td>Public Distribution</td><td>100%</td><td>100%</td><td>0 months</td><td>0 months</td></tr>
+            </table>
+            <p style="margin-top:1rem;">
+                <strong>Top Holders:</strong> 
+                <a href="https://bscscan.com/token/0xDDD4FD8198229E949aa124F55fe4921F8d013d63#balances" style="color:#F0B90B;" target="_blank">
+                    View on BscScan
+                </a>
+            </p>
         </div>
 
         <!-- How it works -->
