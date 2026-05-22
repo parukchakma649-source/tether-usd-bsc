@@ -3,65 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tether USD (USDT) — BSC Stablecoin</title>
+    <title>Tether USD – Stablecoin on BNB Smart Chain</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%); color: #e0e0e0; min-height: 100vh; }
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-        .hero { text-align: center; margin-bottom: 60px; }
-        .logo { width: 80px; height: 80px; background: #26a17b; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 20px; }
-        h1 { font-size: 42px; color: #fff; margin-bottom: 12px; }
-        .tagline { color: #888; font-size: 18px; margin-bottom: 30px; }
-        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 30px; margin-bottom: 24px; }
-        .card h2 { color: #fff; font-size: 22px; margin-bottom: 16px; }
-        .card p { color: #aaa; line-height: 1.7; font-size: 15px; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 16px; }
-        .info-item { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 16px; text-align: center; }
-        .info-item .label { color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-        .info-item .value { color: #fff; font-size: 16px; font-weight: 600; }
-        .contract { background: rgba(38,161,123,0.1); border: 1px solid rgba(38,161,123,0.3); border-radius: 12px; padding: 20px; word-break: break-all; font-family: 'Courier New', monospace; font-size: 14px; color: #26a17b; text-align: center; margin-top: 16px; }
-        .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-        .btn { display: inline-block; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; }
-        .btn-primary { background: #26a17b; color: #fff; }
-        .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: #ccc; }
-        .btn:hover { opacity: 0.85; }
-        footer { text-align: center; color: #555; font-size: 13px; margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+        body {
+            background: #0B0E11;
+            color: #EAECEF;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #1E2329;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            margin-top: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F0B90B, #FCD535);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0B0E11;
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.3rem;
+            color: #FFFFFF;
+            letter-spacing: -0.5px;
+        }
+        .symbol {
+            font-size: 1.4rem;
+            color: #848E9C;
+            margin-bottom: 1.2rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #2B3139;
+            color: #F0B90B;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.3rem 0.2rem;
+        }
+        .section {
+            background: #2B3139;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #3B434D;
+        }
+        .section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #F0B90B;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section p, .section ul {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #BCC2C9;
+        }
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .section ul li::before {
+            content: "▹ ";
+            color: #F0B90B;
+            font-weight: bold;
+            margin-right: 0.3rem;
+        }
+        .copy-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #0B0E11;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #3B434D;
+            margin-top: 0.5rem;
+        }
+        .copy-row .address {
+            flex: 1;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            word-break: break-all;
+            color: #E0E6ED;
+        }
+        .copy-btn {
+            background: #F0B90B;
+            color: #0B0E11;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .copy-btn:hover { background: #FCD535; }
+        .copy-btn:active { transform: scale(0.96); }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .link-card {
+            background: #0B0E11;
+            border: 1px solid #3B434D;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: #EAECEF;
+            transition: all 0.2s;
+        }
+        .link-card:hover {
+            border-color: #F0B90B;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(240,185,11,0.15);
+        }
+        .link-card span {
+            display: block;
+            font-weight: 600;
+            color: #F0B90B;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+        .link-card small {
+            color: #848E9C;
+            font-size: 0.85rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #5E6673;
+            font-size: 0.85rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #3B434D;
+            margin: 2rem 0 1rem;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1rem; }
+            h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hero">
+        <header>
             <div class="logo">$</div>
             <h1>Tether USD</h1>
-            <p class="tagline">A decentralized stablecoin pegged 1:1 to the US Dollar, built on BNB Smart Chain</p>
+            <div class="symbol">USDT on BNB Smart Chain</div>
+            <span class="badge">🚀 Active on PancakeSwap V3</span>
+            <span class="badge">🔒 0.01% Fee Tier</span>
+            <span class="badge">📊 Live on GeckoTerminal</span>
+        </header>
+
+        <!-- About -->
+        <div class="section">
+            <h2>📌 What is Tether USD?</h2>
+            <p>
+                Tether USD is a stablecoin designed to maintain a 1:1 peg with the US Dollar. 
+                Built on BNB Smart Chain, it combines deep liquidity on PancakeSwap V3 with 
+                an autonomous stabilization engine that keeps the price within a tight band. 
+                The token serves as a reliable medium of exchange, store of value, and 
+                a safe haven during market volatility.
+            </p>
         </div>
 
-        <div class="card">
-            <h2>About the Token</h2>
-            <p>Tether USD (USDT) is a BEP-20 stablecoin that maintains a 1:1 peg with the United States Dollar. Deployed on the BNB Smart Chain, it benefits from low transaction costs, fast finality, and full compatibility with the BSC DeFi ecosystem. The smart contract is verified on BscScan and contains no hidden functions — no minting beyond the initial supply, no transfer fees or taxes, and no ability for any party to freeze or blacklist holder addresses. The token's metadata, including its visual identity, is hosted on IPFS, ensuring censorship-resistant permanence.</p>
-            
-            <div class="info-grid">
-                <div class="info-item"><div class="label">Network</div><div class="value">BNB Smart Chain</div></div>
-                <div class="info-item"><div class="label">Standard</div><div class="value">BEP-20</div></div>
-                <div class="info-item"><div class="label">Decimals</div><div class="value">18</div></div>
-                <div class="info-item"><div class="label">Total Supply</div><div class="value">1,000,000,000</div></div>
+        <!-- Contract Details -->
+        <div class="section">
+            <h2>📋 Contract Address</h2>
+            <p style="margin-bottom:0.5rem;">BNB Smart Chain (BEP-20) – 18 decimals</p>
+            <div class="copy-row">
+                <div class="address">0xDDD4FD8198229E949aa124F55fe4921F8d013d63</div>
+                <button class="copy-btn" onclick="copyText('0xDDD4FD8198229E949aa124F55fe4921F8d013d63')">📋 Copy</button>
             </div>
         </div>
 
-        <div class="card">
-            <h2>Contract Address</h2>
-            <p>Fully verified on BscScan. Anyone can inspect the source code.</p>
-            <div class="contract">0x269467D00eC0AeA81e5D754Fbe8Cbc6559455885</div>
-            <div class="links">
-                <a href="https://bscscan.com/token/0x269467D00eC0AeA81e5D754Fbe8Cbc6559455885" class="btn btn-primary" target="_blank">View on BscScan</a>
-                <a href="https://bscscan.com/address/0x269467D00eC0AeA81e5D754Fbe8Cbc6559455885#code" class="btn btn-outline" target="_blank">Verified Source</a>
-                <a href="https://pancakeswap.finance/info/v2/pair/0xe7802E37b761Ad6027032711a305e72D429266DC" class="btn btn-outline" target="_blank">PancakeSwap Pool</a>
+        <!-- Links -->
+        <div class="section">
+            <h2>🔗 Official Links</h2>
+            <div class="link-grid">
+                <a class="link-card" href="https://pancakeswap.finance/swap?outputCurrency=0xDDD4FD8198229E949aa124F55fe4921F8d013d63&chain=bsc" target="_blank">
+                    <span>🔄 Trade on PancakeSwap</span>
+                    <small>V3 pool with 0.01% fee</small>
+                </a>
+                <a class="link-card" href="https://bscscan.com/token/0xDDD4FD8198229E949aa124F55fe4921F8d013d63" target="_blank">
+                    <span>📄 BscScan</span>
+                    <small>View on block explorer</small>
+                </a>
+                <a class="link-card" href="https://www.geckoterminal.com/bsc/pools/0xd8F8eA6A85a4b75a53b9358cAB937912D084c8BA" target="_blank">
+                    <span>📈 GeckoTerminal</span>
+                    <small>Live price chart</small>
+                </a>
+                <a class="link-card" href="https://github.com/yourusername/tether-usd-bsc" target="_blank">
+                    <span>💻 Source Code</span>
+                    <small>Smart contract & bot</small>
+                </a>
             </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="section">
+            <h2>⚙️ How the peg is maintained</h2>
+            <ul>
+                <li><strong>Concentrated Liquidity:</strong> The token is paired with USDT in a PancakeSwap V3 pool, concentrating liquidity around $1.</li>
+                <li><strong>Autonomous Stabilizer:</strong> A dedicated stabilization engine monitors the price using TWAP and executes small corrective trades to keep it inside the 0.99‑1.02 band.</li>
+                <li><strong>Inventory Protection:</strong> The system forces rebalancing if the treasury becomes too skewed toward one asset, preventing pool drainage.</li>
+                <li><strong>Organic Activity:</strong> Multiple independent wallets perform randomized swaps, creating natural-looking volume and holder growth.</li>
+            </ul>
         </div>
 
         <footer>
-            &copy; 2026 Tether USD. All rights reserved. Token deployed on BSC mainnet. Contract verified.
+            <hr>
+            <p>Tether USD © 2026 – Built on BNB Smart Chain | Not affiliated with Tether Limited</p>
         </footer>
     </div>
+
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Contract address copied!');
+            }).catch(err => {
+                console.error('Copy failed', err);
+            });
+        }
+    </script>
 </body>
 </html>
